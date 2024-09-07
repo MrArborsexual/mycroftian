@@ -1,5 +1,5 @@
 # mycroftian
-<<<<<<< HEAD
-Personal Gentoo Repo
-=======
->>>>>>> 2079e85 (Update repo_name)
+My Personal Gentoo Repo
+
+# warning
+You probably shouldn't use this. I barely know what I am doing.
