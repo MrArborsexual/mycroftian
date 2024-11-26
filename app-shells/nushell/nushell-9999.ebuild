@@ -25,7 +25,7 @@ DEPEND="
 RDEPEND="${DEPEND}"
 
 BDEPEND="
-	>=virtual/rust-1.60
+	>=dev-lang/rust-1.60
 	virtual/pkgconfig
 "
 RESTRICT+=" test"
