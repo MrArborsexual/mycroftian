@@ -13,7 +13,7 @@ LICENSE="ISC"
 SLOT="0"
 
 
-BDEPEND=">=virtual/rust-1.64"
+BDEPEND=">=dev-lang/rust-1.64"
 
 src_unpack() {
 	git-r3_src_unpack
