@@ -52,6 +52,7 @@ src_install() {
 
     insinto /opt/koboldcpp
     doins koboldcpp.py README.md koboldcpp_default.so
+    doins kcpp_sdui.embd klite.embd kcpp_docs.embd
 
     # Backend .so libraries based on USE flags
     use clblast  && doins koboldcpp_clblast.so
