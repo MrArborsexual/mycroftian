@@ -1,0 +1,37 @@
+diff --git a/src/util/audio_stream.cpp b/src/util/audio_stream.cpp
+index 6f83644..c9de9c5 100644
+--- a/src/util/audio_stream.cpp
++++ b/src/util/audio_stream.cpp
+@@ -4,8 +4,10 @@
+ #include <mutex>
+ #include <condition_variable>
+ 
+-#include "soundtouch/SoundTouch.h"
+-#include "soundtouch/SoundTouchDLL.h"
++#include "soundtouch/SoundTouch.h"
++
++using namespace soundtouch;
+
+ namespace Audio {
+ 
+@@ -135,7 +137,8 @@ void AudioStream::Init()
+     // This must be initialized after the decoder is set up.
+     m_sample_rate = m_decoder->GetSampleRate();
+ 
+-    m_soundtouch = soundtouch_createInstance();
++    m_soundtouch = new SoundTouch();
++    m_soundtouch->setChannels(2); // Assuming stereo; adjust if needed
+     m_soundtouch->setSampleRate(m_sample_rate);
+     m_soundtouch->setTempo(1.0f);
+     m_soundtouch->setPitchSemiTones(0.0f);
+@@ -193,7 +196,8 @@ void AudioStream::Shutdown()
+     m_decoder = nullptr;
+     m_read_buffer.clear();
+ 
+     {
+         std::lock_guard lock(m_write_lock);
+-        soundtouch_destroyInstance(m_soundtouch);
++        delete m_soundtouch;
++        m_soundtouch = nullptr;
+     }
+ }
