@@ -51,7 +51,7 @@ REQUIRED_USE="
 # Common system libraries you want to force instead of vendoring.
 # Expect to tweak as you wire up your CMake options and unbundle logic.
 COMMON_DEPEND="
-  media-libs/VulkanMemoryAllocator
+  media-libs/
   app-arch/p7zip
   media-libs/iconfontcppheaders
   media-libs/glad
